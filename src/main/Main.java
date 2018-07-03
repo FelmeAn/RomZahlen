@@ -3,21 +3,34 @@ package main;
 import java.util.Scanner;
 
 public class Main {
+	//Bereite die Berechnung mithilfe der Zwei Arrays vor. Damit wird danach gerechnet. Die Arrays werden absichtlich von groß nach 
+	//klein gestaffelt
 	static String rom_strings[] = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 	static int rom_values[] = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+	
+	//START
 	public static void main(String[] args) {
+		//Initialisierte "userinput". Dort wird die Zahl gespeichert, die der Benutzer haben möchte.
 		int userinput;
+		//Hier wird die Eingabe angefordert und auf Fehler geprüft. Ist der Wert kleiner als 0 und größer als 3999 fragt er erneut
+		//nach einer Zahl. 
 		do {
 			userinput = inputcounter();
 		} while (userinput <= 0 || userinput > 3999);
-		//rechnen(userinput) führt die Funktion rechnen aus.
+		//Hier wird der Output gegeben.
+		//Der letzte Teil (rechnen(userinput)) führt die Funktion rechnen, am Ende des Dokumentes, aus.
 		System.out.println("Die Zahl " + userinput + " sieht umgewandelt folgendermaßen aus: " + rechnen(userinput));
 	}
 	public static int inputcounter() {
-		//Wunsch: den Input gleich als zahl zu setzen.
-		//Anweisung: den Input (un)logischerweise erstmal als STRING zu setzen.
+		//Hier wird der Scanner eingerichtet.
 		Scanner sc = new Scanner(System.in);
+		//Hier wird die Anweisung gegeben, eine Zahl einzugeben. 
+		//Der Schönheit halber: kein println
 		System.out.print("Bitte eine Zahl eingaben: ");
+		//Hier wird DIREKT ein Integer angefordert. Das Return setzt in der Main-Funktion den Integer userinput. (
+		//Return = gebe zurück und beende diese Funktion.
+		//ist die Funktion jedoch kein int/String/double/etc., sondern ein Void, wird nichts zurückgegeben, sondern nur beendet.
+		//ist die Funktion die Main-Funktion (public static void main) wird das Programm beendet.
 		return sc.nextInt();
 	}
 	//Warum Public --> Was anderes "haben wir noch nicht gelernt" ich persönlich hätte private benutzt
