@@ -21,9 +21,7 @@ public class Main {
 		Der letzte Teil (rechnen(userinput)) führt die Funktion rechnen, am Ende des Dokumentes, aus.*/
 		System.out.println("Die Zahl " + userinput + " sieht umgewandelt folgendermaßen aus: " + rechnen(userinput));
 	}
-	/*@return Gebe die Zahl zurück, die der Benutzer in den Scanner eingegeben hat.
-	@see java.util.Scanner*/
-	public static int inputcounter() {
+	private static int inputcounter() {
 		//Hier wird der Scanner eingerichtet.
 		Scanner sc = new Scanner(System.in);
 		/*Hier wird die Anweisung gegeben, eine Zahl einzugeben. 
@@ -35,10 +33,7 @@ public class Main {
 		ist die Funktion die Main-Funktion (public static void main) wird das Programm beendet.*/
 		return sc.nextInt();
 	}
-	/*Warum Public --> Was anderes "haben wir noch nicht gelernt" ich persönlich hätte private benutzt
-	warum static? Weil es immer benötigt wird und somit direkt beim Start in den RAM geladen wird.
-	@return Gebe den String zurück, der die Römischen Zahlen beinhaltet.*/
-	public static String rechnen(int userinput) {
+	private static String rechnen(int userinput) {
 		/*Beginne das Berechnen
 		Erstelle einen String 's', der die Zeichenfolge der Römischen Zahlen erstellt.*/
 		String s = "";
